@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block page_title %} Ref number {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large"> Your application is complete </h1>
+            <form class="form">
+                <p>Your photocard licence will be processed ....</p>
+                <!-- need to explain and ask for the customers email solely for sending the conf code -->
+
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+{% endblock %}

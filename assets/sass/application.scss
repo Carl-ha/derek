@@ -1,0 +1,578 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+    margin-top: $gutter;
+    border-top: 10px solid $govuk-blue;
+    padding-top: 5px;
+    .heading-medium {
+        margin-top: 0.3em;
+        margin-bottom: 0.5em;
+    }
+    li {
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+// Hides error message until needed
+span.error-message {
+    display: none;
+}
+
+// -----------------
+// override button colour
+.button-blue {
+    background-color: $link-colour; // override standard green colour
+    box-shadow: 0 2px 0 darken( $link-colour, 20%); // override bottom border colour with a darker version of the background colour
+    &:hover,
+    &:focus {
+        background-color: darken( $link-colour, 10%); // add slightly darker background colour for hover and focus
+    }
+}
+
+// -----------------
+// override errors for multiple input (dates)
+.error .form-control {
+    border: 4px solid #b10e1e;
+}
+
+// -----------------
+// style a list to look like a table
+.button-change {
+    font-weight: bold;
+}
+
+.list-summary-item {
+    border-bottom: 1px solid $border-colour;
+    @extend %contain-floats;
+    padding: .62em 0.0em 0.42em 0.0em;
+}
+
+.list-summary-item:first-child {
+    border-top: 1px solid $border-colour; // Add border top to first item in list
+}
+
+.list-summary-item span {
+    display: block; // Force each <span> onto it’s own line
+}
+
+@media (min-width: 440px) {
+    .list-summary-item span {
+        float: left; // Make each <span> line up in one row
+        width: 50%; // Give all <span>s the same width
+    }
+    .list-summary-item span:first-child {
+        width: 50%; // Make first <span> 50% wide
+    }
+    .list-summary-item.playback span:first-child {
+        width: 70%; // Make first <span> 50% wide
+    }
+    .list-summary-item-right {
+        text-align: right; // Make 3rd <span> align right
+        float: none;
+    }
+}
+
+// -----------------
+// Spacing 
+.margin-top-0 {
+    margin-top: 0em;
+}
+
+.margin-top-0-5 {
+    margin-top: 0.5em;
+}
+
+.margin-top-1 {
+    margin-top: 1em;
+}
+
+.margin-top-1-5 {
+    margin-top: 1.5em;
+}
+
+.margin-top-2 {
+    margin-top: 2em;
+}
+
+.margin-top-3 {
+    margin-top: 3em;
+}
+
+.margin-top-4 {
+    margin-top: 4em;
+}
+
+.margin-right-1 {
+    margin-right: 1em;
+}
+
+.margin-right-2 {
+    margin-right: 2em;
+}
+
+.margin-right-3 {
+    margin-right: 3em;
+}
+
+.margin-right-4 {
+    margin-right: 4em;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0em;
+}
+
+.margin-bottom-0-1 {
+    margin-bottom: 0.1em;
+}
+
+.margin-bottom-0-5 {
+    margin-bottom: 0.5em;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1em;
+}
+
+.margin-bottom-1-5 {
+    margin-bottom: 1.5em;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2em;
+}
+
+.margin-bottom-3 {
+    margin-bottom: 3em;
+}
+
+.margin-bottom-4 {
+    margin-bottom: 4em;
+}
+
+.margin-left-1 {
+    margin-left: 1em;
+}
+
+.margin-left-2 {
+    margin-left: 2em;
+}
+
+.margin-left-3 {
+    margin-left: 3em;
+}
+
+.margin-left-4 {
+    margin-left: 4em;
+}
+
+.padding-top-1-5 {
+    padding-top: 1.5em !important;
+}
+
+.padding-top-1 {
+    padding-top: 1em;
+}
+
+.padding-top-2 {
+    padding-top: 2em;
+}
+
+.padding-top-3 {
+    padding-top: 3em;
+}
+
+.padding-top-4 {
+    padding-top: 4em;
+}
+
+.padding-right-1 {
+    padding-right: 1em;
+}
+
+.padding-right-2 {
+    padding-right: 2em;
+}
+
+.padding-right-3 {
+    padding-right: 3em;
+}
+
+.padding-right-4 {
+    padding-right: 4em;
+}
+
+.padding-bottom-0-5 {
+    padding-bottom: 0.5em;
+}
+
+.padding-bottom-1 {
+    padding-bottom: 1em;
+}
+
+.padding-bottom-1-5 {
+    padding-bottom: 1.5em;
+}
+
+.padding-bottom-2 {
+    padding-bottom: 2em;
+}
+
+.padding-bottom-3 {
+    padding-bottom: 3em;
+}
+
+.padding-bottom-4 {
+    padding-bottom: 4em;
+}
+
+.padding-left-1 {
+    padding-left: 1em;
+}
+
+.padding-left-2 {
+    padding-left: 2em;
+}
+
+.padding-left-3 {
+    padding-left: 3em;
+}
+
+.padding-left-4 {
+    padding-left: 4em;
+}
+
+// -----------------
+// strong tag for bolding 
+strong {
+    font-weight: 700;
+}
+
+// -----------------
+// Global breadcrumb
+#global-breadcrumb {
+    @extend %grid-row;
+    ol {
+        @include grid-column(1);
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        li {
+            @include core-16;
+            float: left;
+            background-image: file-url("separator.png");
+            @include device-pixel-ratio() {
+                background-image: file-url("separator-2x.png");
+                background-size: 6px 11px;
+            }
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            list-style: none;
+            margin-right: 0.5em;
+            margin-bottom: 0.4em;
+            margin-left: 0;
+            padding-right: 1em;
+            a {
+                color: $text-colour;
+            }
+            strong {
+                font-weight: normal;
+            }
+            &:last-child {
+                background-image: none;
+                margin-right: 0
+            }
+        }
+    }
+}
+
+// -----------------
+
+/*   STYLING FOR condition-selection   */
+
+.ui-autocomplete {
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    width: 3em;
+    border-left: 1px solid #BFC1C3;
+    border-right: 1px solid #BFC1C3;
+    max-height: 150px;
+    overflow-x: hidden;
+}
+
+.ui-autocomplete .ui-menu-item {
+    display: block;
+    font-size: 1.2em;
+    padding: .4em;
+    color: #353D44;
+    cursor: pointer;
+}
+
+.ui-autocomplete .ui-menu-item:first-child {
+    border-top: none;
+}
+
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    border-bottom: 1px solid #BFC1C3;
+}
+
+.condiition-selection-panel {
+    padding-top: 0.1em !important;
+    padding-bottom: 0.8em !important;
+}
+
+
+/* ---------------------------------- */
+
+
+/* TABS */
+
+.tabs {
+    margin-bottom: 1.05263em;
+}
+
+.tabs [role="tablist"] {
+    border-top: 1px solid #bfc1c3;
+    margin: 0;
+}
+
+@media (min-width: 641px) {
+    .tabs [role="tablist"] {
+        border-top: 0 none;
+    }
+}
+
+.tabs [role="tablist"] li {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    border-bottom: 1px solid #bfc1c3;
+    margin: 0;
+}
+
+@media (min-width: 641px) {
+    .tabs [role="tablist"] li {
+        font-size: 19px;
+        line-height: 1.31579;
+    }
+}
+
+@media (min-width: 641px) {
+    .tabs [role="tablist"] li {
+        border-bottom: 0 none;
+        float: left;
+        margin: 0 0 -1px;
+        padding: 0;
+    }
+}
+
+.tabs [role="tablist"] li a {
+    background-color: #fff;
+    display: block;
+    padding: 0.47368em;
+}
+
+.tabs [role="tablist"] li a:focus {
+    outline: 3px solid #ffbf47;
+}
+
+@media (min-width: 641px) {
+    .tabs [role="tablist"] li a {
+        background-color: #dee0e2;
+        border: 0 none;
+        float: left;
+        margin: 0.26316em 0.26316em 0.26316em 0;
+        padding: 0.47368em 1em;
+        text-align: center;
+    }
+}
+
+.tabs [role="tablist"] li [aria-selected="true"] {
+    background-color: #fff;
+    color: #0b0c0c;
+    cursor: default;
+    text-decoration: none;
+}
+
+@media (min-width: 641px) {
+    .tabs [role="tablist"] li [aria-selected="true"] {
+        border: 1px solid #bfc1c3;
+        border-bottom: 1px solid transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0.68421em 0.94737em 0.73684em;
+    }
+}
+
+.tabs-content {
+    clear: both;
+}
+
+@media (min-width: 641px) {
+    .tabs-content [role="tabpanel"] {
+        border-top: 1px solid #bfc1c3;
+    }
+}
+
+.tabs-content [role="tabpanel"][aria-hidden="true"] {
+    display: none;
+}
+
+.tabs-panel-inner {
+    width: 66.6667%;
+}
+
+@media (max-width: 641px) {
+    .tabs-panel-inner {
+        width: 100%;
+    }
+}
+
+.tabs-panel-inner:focus {
+    border: 0;
+    outline: 0;
+}
+
+
+/* - - - - - - - - - - - - - */
+
+.column-three-quarter {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+    .column-three-quarter {
+        float: right;
+        width: 75%;
+    }
+}
+
+.column-quarter {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+    .column-quarter {
+        float: left;
+        width: 25%;
+    }
+}
+
+// Styling for reg-mark font
+.reg-mark {
+    font: 28px uknumberplateregular;
+    background-color: #ffd307;
+    //    border: 0.13em solid #333;
+    padding: 0.33em 0.4em 0.33em 0.5em;
+    font-size: 140%;
+    border-radius: 0.25em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+    .reg-mark-parent {
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (min-width: 440px) {
+    .reg-mark {
+        width: inherit !important;
+    }
+}
+
+@media (max-width: 439px) {
+    .reg-mark {
+        width: 96px;
+    }
+}
+
+
+/*  STATUS BAR VES  */
+
+.taxrate {
+    padding-top: 1em;
+    background: #005EA5;
+    text-align: center;
+    color: white;
+    min-height: 3em;
+}
+
+.isValidMot {
+    padding-top: 1em;
+    //    background: #028477;
+    background: #28A197;
+    text-align: center;
+    color: white;
+    min-height: 3em;
+}
+
+.isUntaxed {
+    padding-top: 1em;
+    background: #ae2931;
+    text-align: center;
+    color: white;
+    min-height: 3em;
+}
+
+@media (max-width: 640px) {
+    //mobile
+    .status-bar {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .taxrate,
+    .isValidMot,
+    .isUntaxed {
+        border: 5px solid white;
+    }
+}
+
+@media (min-width: 641px) {
+    //desktop
+    .status-bar .column-third {
+        float: none;
+    }
+    .status-bar {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .taxrate,
+    .isValidMot,
+    .isUntaxed {
+        display: table-cell;
+        border: 10px solid white;
+    }
+}
+
+/*  --------------------  */

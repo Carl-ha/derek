@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} Confirmation {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Driving Licence details </h1>
+            <form class="form">
+
+                <ul class="list-summary">
+                    <li class="list-summary-item" style="border-top:none;">
+                        <span>Driver name:</span>
+                        <span><strong>Dan dare</strong></span>
+
+                    </li>
+
+                    <li class="list-summary-item">
+                        <span>Date of birth:</span>
+                        <span><strong>April 1979</strong></span>
+                    </li>
+
+                    <li class="list-summary-item">
+                        <span>Address:</span>
+                        <span><strong>85 no where street<br>
+                            main road<br>
+                            sa66as</strong></span>
+                        <li class="list-summary-item">
+                            <span>Driver number:</span>
+                            <span><strong>DARE400001MB5MB</strong></span>
+                </ul>
+                <details>
+
+                    <summary><span class="summary">Incorrect details ?</span></summary>
+
+                    <div class="panel panel-border-narrow">
+
+                        <p>
+                            If your licence details are not up to date.....
+                            <a href="#">Update</a> my driving licence details
+                            <!-- Link to licence dashboard -->
+                        </p>
+
+
+
+
+
+                    </div>
+
+                </details>
+
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+            </form>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        go('/derek/payment');
+    }
+</script>
+
+
+{% endblock %}

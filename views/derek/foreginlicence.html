@@ -1,0 +1,101 @@
+{% extends "layout.html" %} {% block page_title %} European Licence {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %}
+<style type="text/css">
+    .panel-indent {
+        max-width: 640px;
+        border-left: 10px solid #e0e0e0;
+        padding: 10px 20px;
+        margin: 12px 0;
+    }
+    
+    .related-links {
+        border-top: 10px solid #005ea5;
+        margin-top: 0;
+        padding-top: 1em
+    }
+</style>
+{% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-xlarge">Exchange a european driving licence</h1>
+
+            <p>Use this service to exchange a european driving licence to a united kingdom photocard licence..... </p>
+
+            <div class="panel-indent">
+                This is a ‘alpha’ service - <a href="https://www.gov.uk/help/alpha">find out what this means for you</a>.
+            </div>
+
+            <h2 class="heading-medium margin-top-1">You will need</h2>
+
+            <ul class="list-bullet padding-bottom-2">
+                <li>A valid european driving licence</li>
+                <!-- need more information about what is required in a paper application to add more advice-->
+                <li>A uk goverment verify service account</li>
+
+            </ul>
+
+
+            {{ button.input(id='continue', name='continue', class='button button-start', type='button', value='Start now') }}
+
+
+
+            <h2 class="heading-medium margin-top-1">Licenses from other countries</h2>
+            <p><a href="https://www.gov.uk/exchange-foreign-driving-licence"> Non EU and NI</a></p>
+
+            <h2 class="heading-medium margin-top-1">Other ways to apply</h2>
+
+            <h3 class="heading-small margin-top-1">By phone</h3>
+
+
+            <p><a href="https://www.gov.uk/contact-the-dvla">Contact DVLA</a>
+
+                <h3 class="heading-small margin-top-1">By Post</h3>
+
+                <p><a href="https://www.gov.uk/dvlaforms">Application forms</a></p>
+
+
+        </div>
+
+
+        <!--  RIGHT COLUMN  -->
+        <div class="column-third">
+            <div class="related-links">
+                <h2 class="heading-medium margin-top-0 padding-top-1">Driving Licence Services</h2>
+
+                <ul class="top-tasks">
+                    <li><a href="start">Applying for a driving licence</a></li>
+                    <li>
+                        <a href="#">Replacing a driving licence</a>
+                    </li>
+                    <li><a href="/derek/verify.html">Exchanging a driving licence</a></li>
+                    <li><a href="#">Renewing a driving licence</a></li>
+                    <li><a href="/derek/">Check application process</a></li>
+
+                </ul>
+
+                <!-- driving licence service links to be added when each flow built-->
+
+
+                <!-- end .related-links  -->
+            </div>
+            <!-- end .column-third  -->
+        </div>
+        <!-- end .grid-row  -->
+</main>
+
+<script>
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        go('/derek/flsquestion.html');
+    }
+</script>
+
+{% endblock %}

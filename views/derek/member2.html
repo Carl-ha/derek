@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block page_title %} member2 {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+
+    <div>
+        <span id="saleType"></span>
+
+    </div>
+
+
+
+
+</main>
+
+
+
+
+
+<script>
+    $('#saleType').html(member.typeOfSale) {
+
+    };
+</script>
+{% endblock %}

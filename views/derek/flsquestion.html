@@ -1,0 +1,64 @@
+{% extends "layout.html" %} {% block page_title %} Customer ref question {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            {% include "includes/errors/service-selection-error-box.html" %}
+            <h1 class="heading-large"> Do you have a customer Reference number? </h1>
+
+            <form class="form">
+                <div class="form-group" id="question">
+                    <span class="error-message">
+                        Select an option
+                    </span>
+                    <fieldset>
+                        <legend class="visuallyhidden"> Do you have a customer ref number? </legend>
+
+                        <label class="block-label" for="menu-a1" id="menu-a1-label">
+                            <input id="menu-a1" type="radio" name="menu" value="yes"> Yes
+                        </label>
+                        <label class="block-label" for="menu-a2" id="menu-a2-label">
+                            <input id="menu-a2" type="radio" name="menu" value="no"> No
+                        </label>
+
+
+
+                    </fieldset>
+                </div>
+                <!--  end .form-group  -->
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+            </form>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        var question = "What would you like to do?";
+        var value = $('input[name=menu]:checked').val();
+
+        if (value == 'yes') {
+            go('/derek/returningfls');
+
+        } else if (value == 'no') {
+            go('/derek/newfls');
+
+        }
+        if (value == 'foreginlicence') {
+            go('/derek/foreginlicence');
+
+        } else {
+            $('#question').addClass('error');
+            $('.error-message').show();
+            $('.error-summary').show();
+        }
+    }
+</script>
+<!-- removing the if statement for foreginlicence stops page functioning -->
+{% endblock %}

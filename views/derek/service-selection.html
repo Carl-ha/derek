@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block page_title %}
+    Licence services
+{% endblock %}
+{% block head %}
+    {% include "includes/head.html" %}
+    {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% import "templates/button.html" as button %}
+
+{% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            {% include "includes/errors/service-selection-error-box.html" %}
+            <h1 class="heading-large"> What Exchange licence service do you require? </h1>
+
+            <form class="form">
+                <div class="form-group" id="question">
+                    <span class="error-message">
+                        Select an option
+                    </span>
+                    <fieldset>
+                        <legend class="visuallyhidden"> What are you applying for? </legend>
+
+                        <label class="block-label" for="menu-a1" id="menu-a1-label">
+                            <input id="menu-a1" type="radio" name="menu" value="testpass"> Exchange a test pass certificate
+                        </label>
+                        <label class="block-label" for="menu-a2" id="menu-a2-label">
+                            <input id="menu-a2" type="radio" name="menu" value="paperlicence"> Exchange a paper licence for a photocard licence
+                        </label>
+                        <label class="block-label" for="menu-a3" id="menu-a3-label">
+                            <input id="menu-a3" type="radio" name="menu" value="foreginlicence">Exchange a european driving licence
+                        </label>
+
+
+                    </fieldset>
+                </div>
+                <!--  end .form-group  -->
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+            </form>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        var question = "What would you like to do?";
+        var value = $('input[name=menu]:checked').val();
+
+        if (value == 'testpass') {
+            go('/derek/testpasscert.html');
+
+        }
+        if (value == 'paperlicence') {
+            go('/derek/papertoplastic');
+
+        }
+        if (value == 'foreginlicence') {
+            go('/derek/foreginlicence');
+
+        } else {
+            $('#question').addClass('error');
+            $('.error-message').show();
+            $('.error-summary').show();
+        }
+    }
+</script>
+
+<!-- issue where valdation is showing even if selection has been made -->
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block page_title %} Pass certificate {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            {% include "includes/errors/exchange-test-pass-error-box.html" %}
+            <h1 class="heading-large"> Exchange test pass certificate </h1>
+            <form class="form">
+                <div class="form-group margin-bottom-0">
+                    <fieldset>
+                        <legend class="visuallyhidden">Enter your user name</legend>
+                        <div class="form-group" id="qtestCert">
+                            <label class="form-label" for="testCert">
+                                Pass certificate reference number
+                                <span class="form-hint">Located on your pass certificate.....
+                                <br>
+                                For example, ‘112 12 34 56 C’.
+                                </span>
+                                <span class="testCert error-message" style="display: none;">Provide a test pass certificate number</span>
+                            </label>
+                            <input class="form-control" id="testCert" name="testCert" type="text" value="">
+                        </div>
+                    </fieldset>
+                </div>
+                <!--  end .form-group  -->
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+            </form>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        var validInput = true;
+
+        $('.testCert.error-message').hide();
+        $('#qtestCert').removeClass('error');
+
+        var testCert = $('input[name=testCert]').val();
+        if ((testCert == '') || (testCert == undefined)) {
+            $('#qtestCert').addClass('error');
+            $('.testCert.error-message').show();
+            //            $('.error-summary').show();
+            $('body').scrollTop(0);
+            validInput = false;
+        }
+
+        if (validInput) {
+            go('/derek/passcertdisplay');
+        }
+    }
+</script>
+
+{% endblock %}

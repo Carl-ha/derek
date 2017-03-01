@@ -1,0 +1,73 @@
+{% extends "layout.html" %} {% block page_title %} Payment {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large"> Pay by credit or debit card </h1>
+            <form class="form">
+
+                <img src="/public/images/cards.png" alt="Credit cards">
+
+
+
+                <div class="form-group">
+                    <label class="form-label" for="select-box"> card....</label>
+                    <select class="form-control" id="select-box">
+                        <option></option>
+                        <option>UK maestro</option>
+                        <option>Visa debit</option>
+                        <option>Mastercard debit</option>
+                        <option>American express</option>
+                        <option>Electron debit</option>
+                        <option>Visa</option>
+                        <option>Mastercard</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="form-label" for="first-name-1">Card number</label>
+                    <input class="form-control" id="first-name-1" name="first-name-1" type="text">
+                    <label class="form-label" for="sortcode">Sort code</label>
+                    <input class="form-control" id="sortcode" name="sordcode" type="text">
+                    <label class="form-label" for="expirydate">Expiry date</label>
+                    <input class="form-control" id="sortcode" name="expirydate" type="text">
+                    <label class="form-label" for="securitycode">Security Code</label>
+                    <input class="form-control" id="securitycode" name="security code" </details>
+                    <details>
+
+                        <summary><span class="summary">Where is my security code ? </span></summary>
+
+                        <div class="panel panel-border-narrow">
+                            <img src="/public/images/card%20picture.png" alt="Credit cards">
+                            <p>Your credit or debit cards secruity number is located on the back of your card. The last three digits of the numbers printed on the signature panel is the security code.</p>
+
+
+                        </div>
+
+                    </details>
+                </div>
+                <p>Total fee £17.00</p>
+
+
+
+                <!-- need a recieved payment screen -->
+
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Make payment') }}
+            </form>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        go('/derek/Paymentsuccesfull');
+    }
+</script>
+
+{% endblock %}

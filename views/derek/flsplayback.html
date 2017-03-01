@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block page_title %} Confirmation {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">EU driving Licence details </h1>
+            <form class="form">
+
+                <ul class="list-summary">
+                    <li class="list-summary-item" style="border-top:none;">
+                        <span>Driver name:</span>
+                        <span><strong>Jack Jones</strong></span>
+
+                    </li>
+
+                    <li class="list-summary-item">
+                        <span>Date of birth:</span>
+                        <span><strong>September 1992</strong></span>
+                    </li>
+
+                    <li class="list-summary-item">
+                        <span>Address:</span>
+                        <span><strong>13 primrose bank<br>
+                            mary street<br>
+                            sa77af</strong></span>
+                        <li class="list-summary-item">
+                            <span>EU Driver number:</span>
+                            <span><strong>JONES20100101001MB5MB</strong></span>
+                </ul>
+
+                <p></p>
+                {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+            </form>
+        </div>
+    </div>
+</main>
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        go('/derek/flsrefpage');
+    }
+</script>
+
+
+{% endblock %}

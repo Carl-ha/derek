@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block page_title %} Verify {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large"> Verify </h1>
+            <img src="/public/images/Verify_logo.png" alt="Credit cards"> {{ button.input(id='continue', name='continue', class='button', type='button', value='Continue') }}
+
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+    $(".button").click(function () {
+        // Enter function name here
+        validate();
+    });
+
+    function validate() {
+        go('/derek/service-selection');
+    }
+</script>
+
+{% endblock %}

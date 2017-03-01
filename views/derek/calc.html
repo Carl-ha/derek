@@ -1,0 +1,147 @@
+{% extends "layout.html" %} {% block page_title %} calculator {% endblock %} {% block head %} {% include "includes/head.html" %} {% include "includes/scripts.html" %} {% endblock %} {% import "templates/button.html" as button %} {% block content %}
+<main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %} {% include "includes/buttons/back.html" %}
+    <div class="grid-row" id="pr3">
+        <div class="column-two-thirds">
+            <h1 class="heading-large"> Calculator </h1>
+            <div align="center">
+                <table width="30%" border="4">
+                    <tr>
+                        <td colspan="2" align="center"></td>
+                    </tr>
+                    <tr>
+                        <td>Numeric Buttons</td>
+                        <td>Function Buttons</td>
+                    </tr>
+                </table>
+            </div>
+            <FORM name="Calculator">
+                <table border="4">
+                    <!--OUTER BORDER OF CALCULATOR, PANELS-->
+                    <tr> -->
+                        <!--TOP PANEL------>
+
+                        <br>
+                        <input type="text" maxlength="40" size="30" name="answer" id="calcoutput">
+                        </td>
+                    </tr>
+                    <!--END TOP PANEL--->
+                    <tr>
+                        <td>
+                            <!--LEFT PANEL------>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="button" value="9" onclick="Calculator.answer.value+= '9'">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="8" onclick="Calculator.answer.value+= '8'">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="7" onclick="Calculator.answer.value+= '7'">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="button" value="6" onclick="Calculator.answer.value+= '6'">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="5" onclick="Calculator.answer.value+= '5'">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="4" onclick="Calculator.answer.value+= '4'">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="button" value="3" onclick="Calculator.answer.value+= '3'">
+
+                                    </td>
+                                    <td>
+                                        <input type="button" value="2" onclick="Calculator.answer.value+= '2'">
+
+                                    </td>
+                                    <td>
+                                        <input type="button" value="1" onclick="Calculator.answer.value+= '1'">
+
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                            </table>
+                        </td>
+
+                        <!--END LEFT PANEL-->
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="button" value="">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="button" value=".">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="/">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="*">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="button" value="=">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="-">
+                                    </td>
+                                    <td>
+                                        <input type="button" value="+">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                            </table>
+                        </td>
+                        <!--RIGHT PANEL----->
+                        <table>
+
+                        </table>
+                        </td>
+                        <!--END RIGHT PANEL-->
+                    </tr>
+                </table>
+            </FORM>
+
+        </div>
+    </div>
+</main> -->
+
+<script type="text/javascript">
+    member. = $('#').val();
+</script>
+</script>
+
+{% endblock %}
